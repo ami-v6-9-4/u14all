@@ -2,23 +2,24 @@ language: none
 
 services:
   #- cassandra 
-  - couchdb 
-  - elasticsearch 
-  - memcached 
-  - mongodb 
-  - mysql 
-  - postgres 
-  - rabbitmq 
-  - redis 
-  - rethinkdb 
-  - riak 
-  - selenium 
-  - sqlite
+  - couchdb #2.1.1
+  - elasticsearch #6.1.1
+  - neo4j 3.3.1
+  - memcached #1.5.4
+  - mongodb #3.6.2
+  - mysql #5.7.20
+  - postgres #10.1
+  - rabbitmq #3.6.14
+  - redis #4.0.7
+  - rethinkdb #2.3.6
+  - riak #2.2.3
+  - selenium #3.8.1
+  - sqlite #3.22.0
   
 build:
   pre_ci_boot:
     image_name: drydock/u14all
-    image_tag: v6.1.4
+    image_tag: v6.3.4
     pull: true
     
   ci:
