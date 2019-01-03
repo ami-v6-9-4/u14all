@@ -1,10 +1,10 @@
 language: none
 
 services:
-  #- cassandra 
+  - cassandra #3.11.2
   - couchdb #2.1.1
   - elasticsearch #6.1.1
-  - neo4j 3.3.1
+  - neo4j #3.3.1
   - memcached #1.5.4
   - mongodb #3.6.2
   - mysql #5.7.20
@@ -14,7 +14,7 @@ services:
   - rethinkdb #2.3.6
   - riak #2.2.3
   - selenium #3.8.1
-  - sqlite #3.22.0
+  - sqllite #3.22.0
   
 build:
   pre_ci_boot:
@@ -23,7 +23,7 @@ build:
     pull: true
     
   ci:
-   # - echo SHIPPABLE_CASSANDRA_BINARY=$SHIPPABLE_CASSANDRA_BINARY
+    - echo SHIPPABLE_CASSANDRA_BINARY=$SHIPPABLE_CASSANDRA_BINARY
     - echo SHIPPABLE_COUCHDB_BINARY=$SHIPPABLE_COUCHDB_BINARY
     - echo SHIPPABLE_ES_BINARY=$SHIPPABLE_ES_BINARY
     - echo SHIPPABLE_MEMCACHED_BINARY=$SHIPPABLE_MEMCACHED_BINARY
@@ -35,13 +35,12 @@ build:
     - echo SHIPPABLE_SELENIUM_v=$SHIPPABLE_SELENIUM_BINARY    
     - echo SHIPPABLE_SQLITE_BINARY=$SHIPPABLE_SQLITE_BINARY
 
-   # - cassandra -v
+    - cassandra -v
     - memcached -V
     - riak version
     - which mysql
     - mysql -V #|| true
-    - which sqlite3 #|| true
-    
+    - which sqlite3 #|| true    
     - java -jar /usr/local/selenium/selenium-server-standalone-3.8.1.jar --version
     - sqlite3 --version
     - psql --version
@@ -53,8 +52,7 @@ build:
     - elasticsearch --version
     - sleep 5
     - curl http://127.0.0.1:5984
-    - pip show pycrypto
-    
+    - pip show pycrypto    
     - docker pull shippabledocker/sample_node_pvt:ecr
     
 integrations:
