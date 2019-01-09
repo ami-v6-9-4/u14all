@@ -3,19 +3,19 @@ language: none
 services:
   - cassandra #3.11.2
   - couchdb #2.1.1
-  - elasticsearch #6.1.1
-  - neo4j #3.3.1
-  - memcached #1.5.4
-  - mongodb #3.6.2
-  - mysql #5.7.20
-  - postgres #10.1
-  - rabbitmq #3.6.14
-  - redis #4.0.7
+  - elasticsearch #6.2.4
+  - neo4j #3.3.5
+  - memcached #1.5.7
+  - mongodb #3.6.4
+  - mysql #5.7.22
+  - postgres #10.4
+  - rabbitmq #3.6.15-1
+  - redis #4.0.9
   - rethinkdb #2.3.6
   - riak #2.2.3
-  - selenium #3.8.1
+  - selenium #3.11.0
   - sqlite #3.22.0
-  
+ 
 build:
   pre_ci_boot:
     image_name: drydock/u14all
@@ -41,7 +41,7 @@ build:
     - which mysql
     - mysql -V #|| true
     - which sqlite3 #|| true    
-    - java -jar /usr/local/selenium/selenium-server-standalone-3.8.1.jar --version
+    - java -jar /usr/local/selenium/selenium-server-standalone-3.11.0.jar --version
     - sqlite3 --version
     - psql --version
     - redis-server --version
