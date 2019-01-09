@@ -1,5 +1,8 @@
 language: none
 
+runtime:
+  nodePool: dynamic__x86_64__Ubuntu_14_04__c4_large
+  
 services:
   - cassandra #3.11.2
   - couchdb #2.1.1
